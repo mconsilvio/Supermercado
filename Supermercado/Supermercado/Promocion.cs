@@ -6,47 +6,42 @@ namespace Supermercado
 {
 	public class Promocion
 	{
-		/* private string tipo = null;
-		private string marca= null;
-		private string envase= null;
-		private float precio= 0;
+		private Producto producto;
+		private int cantidadLLevar;
+		private int cantidadPagar;
 
-		public string getTipo(){
-			return this.tipo;
+		public Producto getProducto(){
+			return this.producto;
 		}
 
-		public void setTipo(string nuevotipo){
-			this.tipo = nuevotipo;
+		public void setProducto(Producto nuevoProducto){
+			this.producto = nuevoProducto;
 		}
 
-		public string getMarca(){
-			return this.marca;
+		public int getCantidadLLevar(){
+			return this.cantidadLLevar;
 		}
 
-		public void setMarca(string nuevaMarca){
-			this.marca = nuevaMarca;
+		public void setCantidadLLevar(int nuevaCant){
+			this.cantidadLLevar = nuevaCant;
 		}
 
-		public string getEnvase(){
-			return this.envase;
+		public int getCantidadPagar(){
+			return this.cantidadPagar;
 		}
 
-		public void setEnvase(string nuevoEnvase){
-			this.envase = nuevoEnvase;
+		public void setCantidadPagar(int nuevaCant){
+			this.cantidadPagar = nuevaCant;
 		}
 
-		public float getPrecio(){
-			return this.precio;
+		public void setPromocion(int cantLLevar,int cantPagar){
+			this.setCantidadLLevar (cantLLevar);
+			this.setCantidadPagar (cantPagar);
 		}
 
-		public void setPrecio(float nuevoPrecio){
-			this.precio = nuevoPrecio;
+		public string verPromos(){
+			return this.producto.mostrarProducto () + " LLevas:" + this.cantidadLLevar.ToString () + " Pagas:" + this.cantidadPagar.ToString ();
 		}
-
-		public string mostrarProducto(){
-			return "Tipo: " + this.getTipo () + " Marca: " + this.getMarca () + " Envase: " + this.getEnvase () + " Precio: " + this.getPrecio().ToString();
-		}*/
-
 
 	}
 }

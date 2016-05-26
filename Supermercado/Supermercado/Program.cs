@@ -8,7 +8,7 @@ namespace Supermercado
 		public static void Main (string[] args)
 		{	
 			ArrayList listaProductos = new ArrayList();
-
+			ArrayList listaPromociones = new ArrayList ();
 			Console.WriteLine ("P R O D U C T O S");
 			Console.WriteLine ("");
 			Console.WriteLine ("Ingrese un número");
@@ -60,32 +60,60 @@ namespace Supermercado
 						Console.WriteLine ("");
 						ac = Console.ReadLine();
 						accion = int.Parse (ac);
-
 						break;
+
 					case 2:
-						Console.Clear();
+						Console.Clear ();
 						Console.WriteLine ("P R O D U C T O S [Carga-promociones]");
 						Console.WriteLine ("");
 
 						Console.WriteLine ("Listado de productos: ");
-						int i=1;
-						foreach (Producto producto2 in listaProductos){
-							Console.WriteLine(i + "--> " + producto2.mostrarProducto());
-							i++ ;	
+						int i = 1;
+						foreach (Producto producto2 in listaProductos) {
+							Console.WriteLine (i + "--> " + producto2.mostrarProducto ());
+							i++;	
 						}
 
 						Console.WriteLine ("");
 						Console.WriteLine ("Seleccione el producto para la promoción");
+						string idProd = Console.ReadLine ();
+						int idProducto = int.Parse (idProd);
+						Console.WriteLine ("Ingrese cantidad a llevar:");
+						string cantLLevar = Console.ReadLine ();
+						int cantidadLlevar = int.Parse (cantLLevar);
+						Console.WriteLine ("Ingrese cantidad a pagar:");
+						string cantPagar = Console.ReadLine ();
+						int cantidadPagar = int.Parse (cantPagar);
+						
+						Promocion promocion = new Promocion ();
 
+						promocion.setProducto ((Producto)listaProductos [idProducto - 1]);
+						promocion.setPromocion (cantidadLlevar, cantidadPagar);
+
+						listaPromociones.Add (promocion);
+
+						Console.Clear();
+						Console.WriteLine ("P R O D U C T O S [carga]");
+						Console.WriteLine ("");
+						Console.WriteLine ("Ingrese otro número para continuar");
+						Console.WriteLine ("1 --> Cargar un producto");
+						Console.WriteLine ("2 --> Cargar un promoción");
+						Console.WriteLine ("3 --> Listar los productos");
+						Console.WriteLine ("4 --> Listar las promociones");
+						Console.WriteLine ("5 --> Volver al menu principal");
+						Console.WriteLine ("");
+						ac = Console.ReadLine();
+						accion = int.Parse (ac);
 						break;
 
 					case 3:
-						Console.Clear();
+						Console.Clear ();
 						Console.WriteLine ("P R O D U C T O S [lista-productos]");
 						Console.WriteLine ("");
-						foreach (Producto producto2 in listaProductos){
-							Console.WriteLine(producto2.mostrarProducto());
+						foreach (Producto producto2 in listaProductos) {
+							Console.WriteLine (producto2.mostrarProducto ());
 						}
+						Console.ReadKey (true);
 						Console.Clear();
 						Console.WriteLine ("P R O D U C T O S [carga]");
 						Console.WriteLine ("");
@@ -100,12 +128,15 @@ namespace Supermercado
 						accion = int.Parse (ac);
 						break;
 					case 4:
-						Console.Clear();
+						
+						Console.Clear ();
 						Console.WriteLine ("P R O D U C T O S [lista-promociones]");
 						Console.WriteLine ("");
-						foreach (Producto producto3 in listaProductos){
-							Console.WriteLine(producto3.mostrarProducto());
+						foreach (Promocion promo1 in listaPromociones) {
+							Console.WriteLine (promo1.verPromos ());
 						}
+						Console.WriteLine ("Presione alguna tecla para volver...");
+						string sasa = Console.ReadLine ();
 						Console.Clear();
 						Console.WriteLine ("P R O D U C T O S [carga]");
 						Console.WriteLine ("");
@@ -119,6 +150,8 @@ namespace Supermercado
 						ac = Console.ReadLine();
 						accion = int.Parse (ac);
 						break;
+
+
 					default:
 						Console.Clear();
 						Console.WriteLine ("P R O D U C T O S");
