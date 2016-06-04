@@ -4,19 +4,19 @@ using System.Collections;
 
 namespace Supermercado
 {
-	public class iniciarProducto
+	public class iniciarCajas
 	{
-		public void iniciar()
+		public iniciarCajas ()
 		{
-			ArrayList listaProductos = new ArrayList();
-			ArrayList listaPromociones = new ArrayList ();
-			Console.WriteLine ("P R O D U C T O S");
+			ArrayList listaCajas = new ArrayList();
+			ArrayList listaCajeros = new ArrayList ();
+			Console.WriteLine ("C A J A S");
 			Console.WriteLine ("");
-			Console.WriteLine ("Ingrese un número");
-			Console.WriteLine ("1 --> Cargar un producto");
-			Console.WriteLine ("2 --> Cargar un promoción");
-			Console.WriteLine ("3 --> Listar los productos");
-			Console.WriteLine ("4 --> Listar las promociones");
+			Console.WriteLine ("Ingrese un número:");
+			Console.WriteLine ("1 --> Nuevo cajero");
+			Console.WriteLine ("2 --> Abrir caja");
+			Console.WriteLine ("3 --> Cerrar caja");
+			Console.WriteLine ("4 --> Listado de cajas");
 			Console.WriteLine ("5 --> Volver al menu principal");
 			Console.WriteLine ("");
 
@@ -28,39 +28,40 @@ namespace Supermercado
 				switch (accion){
 				case 1:
 					Console.Clear();
-					Console.WriteLine ("P R O D U C T O S [Carga-productos]");
+					Console.WriteLine ("C A J A S [Carga-cajero]");
 					Console.WriteLine ("");
-					Console.Write ("Ingrese tipo de producto: ");
-					string tipo = Console.ReadLine ();
-					Console.Write ("Ingrese marca de producto: ");
-					string marca = Console.ReadLine ();
-					Console.Write ("Ingrese envase de producto: ");
-					string envase = Console.ReadLine ();
-					Console.Write ("Ingrese Precio: ");
+					Console.Write ("Ingrese el nombre: ");
+					string nombre = Console.ReadLine ();
+					Console.Write ("Ingrese el apellido: ");
+					string apellido = Console.ReadLine ();
+					Console.Write ("Ingrese el dni: ");
+					string d = Console.ReadLine ();
+					int dni = int.Parse (d);
+					Console.Write ("Ingrese el horario de trabajo: ");
+					string horario = Console.ReadLine ();
 
-					string pr = Console.ReadLine ();
-					float precio = float.Parse (pr);
 
-					Producto producto = new Producto ();
-					producto.setTipo (tipo);
-					producto.setMarca (marca);
-					producto.setEnvase (envase);
-					producto.setPrecio (precio);
-					listaProductos.Add (producto);
+					Cajero cajero = new Cajero ();
+					cajero.setNombre (nombre);
+					cajero.setApellido (apellido);
+					cajero.setDni (dni);
+					cajero.setHorario (horario);
+					listaCajeros.Add (cajero);
 
 					Console.Clear();
-					Console.WriteLine ("P R O D U C T O S [carga-productos]");
+					Console.WriteLine ("C A J A S");
 					Console.WriteLine ("");
-					Console.WriteLine ("Carga exitosa.");
-					Console.WriteLine ("Ingrese otro número para continuar:");
-					Console.WriteLine ("1 --> Cargar un producto");
-					Console.WriteLine ("2 --> Cargar un promoción");
-					Console.WriteLine ("3 --> Listar los productos");
-					Console.WriteLine ("4 --> Listar las promociones");
+					Console.WriteLine ("Ingrese un número:");
+					Console.WriteLine ("1 --> Nuevo cajero");
+					Console.WriteLine ("2 --> Abrir caja");
+					Console.WriteLine ("3 --> Cerrar caja");
+					Console.WriteLine ("4 --> Listado de cajas");
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
+
 					ac = Console.ReadLine();
 					accion = int.Parse (ac);
+
 					break;
 
 				case 2:

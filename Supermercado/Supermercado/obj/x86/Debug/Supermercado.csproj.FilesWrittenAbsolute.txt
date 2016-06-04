@@ -3,3 +3,8 @@
 /home/matias/Escritorio/programa/Supermercado/Supermercado/bin/Debug/Supermercado.exe
 /home/matias/Escritorio/programa/Supermercado/Supermercado/obj/x86/Debug/Supermercado.exe
 /home/matias/Escritorio/programa/Supermercado/Supermercado/obj/x86/Debug/Supermercado.exe.mdb
+/Users/matias_consilvio/dev/Supermercado/Supermercado/Supermercado/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/matias_consilvio/dev/Supermercado/Supermercado/Supermercado/bin/Debug/Supermercado.exe.mdb
+/Users/matias_consilvio/dev/Supermercado/Supermercado/Supermercado/bin/Debug/Supermercado.exe
+/Users/matias_consilvio/dev/Supermercado/Supermercado/Supermercado/obj/x86/Debug/Supermercado.exe
+/Users/matias_consilvio/dev/Supermercado/Supermercado/Supermercado/obj/x86/Debug/Supermercado.exe.mdb
