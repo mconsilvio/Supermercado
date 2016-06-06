@@ -4,7 +4,14 @@ using System.Collections;
 namespace Supermercado
 {
 	public class Supermercado
-	{
+	{	
+		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
+		{
+			Console.Clear ();
+			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			super.iniciar ();
+		}
+
 		ArrayList listaProductos = new ArrayList();
 		ArrayList listaPromociones = new ArrayList ();
 		ArrayList listaCajas = new ArrayList();

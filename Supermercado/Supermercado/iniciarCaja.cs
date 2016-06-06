@@ -6,9 +6,14 @@ namespace Supermercado
 {
 	public class iniciarCaja
 	{
+		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
+		{
+			Console.Clear ();
+			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			super.iniciar ();
+		}
 		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
 		{
-	
 			Console.WriteLine ("C A J A S");
 			Console.WriteLine ("");
 			Console.WriteLine ("Ingrese un número:");
@@ -67,7 +72,8 @@ namespace Supermercado
 					Console.WriteLine ("C A J A S [Abrir-caja]");
 					Console.WriteLine ("");
 					Console.WriteLine ("Ingrese el número de caja a abrir [del 1 al 5]:");
-					string CodigoCaja = Console.ReadLine ();
+					string CodCaja = Console.ReadLine ();
+					int CodigoCaja = int.Parse (CodCaja);
 					Console.WriteLine ("Ingrese el cajero a cargo:");
 					string CajeroAcargo = Console.ReadLine ();
 
@@ -96,7 +102,8 @@ namespace Supermercado
 					Console.WriteLine ("C A J A S [Cerrar-caja]");
 					Console.WriteLine ("");
 					Console.WriteLine ("Ingrese el número de caja a cerrar [del 1 al 5]:");
-					CodigoCaja = Console.ReadLine ();
+					CodCaja = Console.ReadLine ();
+					CodigoCaja = int.Parse (CodCaja);
 
 
 
@@ -129,7 +136,7 @@ namespace Supermercado
 
 					Console.WriteLine ("");
 					Console.WriteLine ("Presione alguna tecla para volver...");
-					string volver = Console.ReadLine ();
+					Console.ReadLine ();
 
 
 
@@ -165,12 +172,9 @@ namespace Supermercado
 					break;
 				}	
 			}
-			Console.WriteLine (listaCajas [0]);
-			Console.WriteLine (listaCajeros [0]);
-
 			Console.Clear ();
-			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
-			super.iniciar ();
+			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+
 		}
 	}
 }

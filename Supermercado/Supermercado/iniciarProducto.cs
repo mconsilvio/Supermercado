@@ -6,6 +6,12 @@ namespace Supermercado
 {
 	public class iniciarProducto
 	{
+		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
+		{
+			Console.Clear ();
+			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			super.iniciar ();
+		}
 		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
 		{
 			Console.WriteLine ("P R O D U C T O S");
@@ -135,7 +141,7 @@ namespace Supermercado
 						Console.WriteLine (promo1.verPromos ());
 					}
 					Console.WriteLine ("Presione alguna tecla para volver...");
-					string volver = Console.ReadLine ();
+					Console.ReadLine ();
 
 					Console.Clear();
 					Console.WriteLine ("P R O D U C T O S [carga]");
@@ -169,12 +175,9 @@ namespace Supermercado
 					break;
 				}	
 			}
-			Console.WriteLine (listaProductos [0]);
-			Console.WriteLine (listaPromociones [0]);
-
 			Console.Clear ();
-			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
-			super.iniciar ();
+			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+
 		}
 	}
 }
