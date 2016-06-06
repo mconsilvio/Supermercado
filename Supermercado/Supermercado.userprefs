@@ -1,11 +1,8 @@
 ﻿<Properties StartupItem="Supermercado/Supermercado.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Supermercado/iniciarProducto.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Supermercado/iniciarCajas.cs">
     <Files>
-      <File FileName="Supermercado/Producto.cs" Line="49" Column="3" />
-      <File FileName="Supermercado/Promocion.cs" Line="2" Column="26" />
-      <File FileName="Supermercado/iniciarProducto.cs" Line="1" Column="4" />
-      <File FileName="Supermercado/Program.cs" Line="13" Column="27" />
+      <File FileName="Supermercado/iniciarCajas.cs" Line="74" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
