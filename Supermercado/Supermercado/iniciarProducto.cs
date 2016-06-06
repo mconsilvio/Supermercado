@@ -137,7 +137,7 @@ namespace Supermercado
 						Console.WriteLine (promo1.verPromos ());
 					}
 					Console.WriteLine ("Presione alguna tecla para volver...");
-					string sasa = Console.ReadLine ();
+					string volver = Console.ReadLine ();
 					Console.Clear();
 					Console.WriteLine ("P R O D U C T O S [carga]");
 					Console.WriteLine ("");
@@ -172,9 +172,8 @@ namespace Supermercado
 				}	
 			}
 			Console.Clear();
-			Console.WriteLine ("M O D U L O S");
-			Console.WriteLine ("");
-			Console.WriteLine ("menu principal");
+			MainClass main = new MainClass ();
+
 		}
 	}
 }

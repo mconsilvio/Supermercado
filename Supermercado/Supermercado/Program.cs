@@ -34,6 +34,8 @@ namespace Supermercado
 
 				case 2:
 					Console.Clear ();
+					iniciarCaja moduloCajas = new iniciarCaja ();
+					moduloCajas.iniciar ();
 
 					break;
 

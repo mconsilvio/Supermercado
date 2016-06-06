@@ -38,11 +38,11 @@
     <Compile Include="Producto.cs" />
     <Compile Include="Promocion.cs" />
     <Compile Include="iniciarProducto.cs" />
-    <Compile Include="iniciarCajas.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Cajero.cs" />
-    <Compile Include="Cajas.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Caja.cs" />
+    <Compile Include="iniciarCaja.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

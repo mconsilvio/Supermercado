@@ -40,7 +40,8 @@ namespace Supermercado
 		}
 
 		public string verPromos(){
-			return this.producto.mostrarProducto () + " LLevas:" + this.cantidadLLevar.ToString () + " Pagas:" + this.cantidadPagar.ToString ();
+			return this.producto.mostrarProducto () + " LLevas:" + this.cantidadLLevar.ToString ()
+			+ " Pagas:" + this.cantidadPagar.ToString ();
 		}
 
 	}

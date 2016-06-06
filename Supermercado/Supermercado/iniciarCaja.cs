@@ -4,11 +4,22 @@ using System.Collections;
 
 namespace Supermercado
 {
-	public class iniciarCajas
+	public class iniciarCaja
 	{
-		public iniciarCajas ()
+		public void iniciar()
 		{
 			ArrayList listaCajas = new ArrayList();
+			Caja caja1 = new Caja (1);
+			Caja caja2 = new Caja (2);
+			Caja caja3 = new Caja (3);
+			Caja caja4 = new Caja (4);
+			Caja caja5 = new Caja (5);
+			listaCajas.Add (caja1);
+			listaCajas.Add (caja2);
+			listaCajas.Add (caja3);
+			listaCajas.Add (caja4);
+			listaCajas.Add (caja5);
+
 			ArrayList listaCajeros = new ArrayList ();
 			Console.WriteLine ("C A J A S");
 			Console.WriteLine ("");
@@ -40,7 +51,6 @@ namespace Supermercado
 					Console.Write ("Ingrese el horario de trabajo: ");
 					string horario = Console.ReadLine ();
 
-
 					Cajero cajero = new Cajero ();
 					cajero.setNombre (nombre);
 					cajero.setApellido (apellido);
@@ -66,116 +76,113 @@ namespace Supermercado
 
 				case 2:
 					Console.Clear ();
-					Console.WriteLine ("P R O D U C T O S [Carga-promociones]");
+					Console.WriteLine ("C A J A S [Abrir-caja]");
 					Console.WriteLine ("");
+					Console.WriteLine ("Ingrese el número de caja a abrir [del 1 al 5]:");
+					string CodigoCaja = Console.ReadLine ();
+					Console.WriteLine ("Ingrese el cajero a cargo:");
+					string CajeroAcargo = Console.ReadLine ();
 
-					Console.WriteLine ("Listado de productos: ");
-					int i = 1;
-					foreach (Producto producto2 in listaProductos) {
-						Console.WriteLine (i + "--> " + producto2.mostrarProducto ());
-						i++;	
-					}
 
-					Console.WriteLine ("");
-					Console.WriteLine ("Seleccione el producto para la promoción");
-					string idProd = Console.ReadLine ();
-					int idProducto = int.Parse (idProd);
-					Console.WriteLine ("Ingrese cantidad a llevar:");
-					string cantLLevar = Console.ReadLine ();
-					int cantidadLlevar = int.Parse (cantLLevar);
-					Console.WriteLine ("Ingrese cantidad a pagar:");
-					string cantPagar = Console.ReadLine ();
-					int cantidadPagar = int.Parse (cantPagar);
 
-					Promocion promocion = new Promocion ();
 
-					promocion.setProducto ((Producto)listaProductos [idProducto - 1]);
-					promocion.setPromocion (cantidadLlevar, cantidadPagar);
 
-					listaPromociones.Add (promocion);
+
+
 
 					Console.Clear();
-					Console.WriteLine ("P R O D U C T O S [carga]");
+					Console.WriteLine ("C A J A S");
 					Console.WriteLine ("");
-					Console.WriteLine ("Ingrese otro número para continuar");
-					Console.WriteLine ("1 --> Cargar un producto");
-					Console.WriteLine ("2 --> Cargar un promoción");
-					Console.WriteLine ("3 --> Listar los productos");
-					Console.WriteLine ("4 --> Listar las promociones");
+					Console.WriteLine ("Ingrese un número:");
+					Console.WriteLine ("1 --> Nuevo cajero");
+					Console.WriteLine ("2 --> Abrir caja");
+					Console.WriteLine ("3 --> Cerrar caja");
+					Console.WriteLine ("4 --> Listado de cajas");
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
+
 					ac = Console.ReadLine();
 					accion = int.Parse (ac);
+
 					break;
 
 				case 3:
 					Console.Clear ();
-					Console.WriteLine ("P R O D U C T O S [lista-productos]");
+					Console.WriteLine ("C A J A S [Cerrar-caja]");
 					Console.WriteLine ("");
-					foreach (Producto producto2 in listaProductos) {
-						Console.WriteLine (producto2.mostrarProducto ());
-					}
-					Console.ReadKey (true);
+					Console.WriteLine ("Ingrese el número de caja a cerrar [del 1 al 5]:");
+					CodigoCaja = Console.ReadLine ();
+
+
+
+
+
 					Console.Clear();
-					Console.WriteLine ("P R O D U C T O S [carga]");
+					Console.WriteLine ("C A J A S");
 					Console.WriteLine ("");
-					Console.WriteLine ("Ingrese otro número para continuar");
-					Console.WriteLine ("1 --> Cargar un producto");
-					Console.WriteLine ("2 --> Cargar un promoción");
-					Console.WriteLine ("3 --> Listar los productos");
-					Console.WriteLine ("4 --> Listar las promociones");
+					Console.WriteLine ("Ingrese un número:");
+					Console.WriteLine ("1 --> Nuevo cajero");
+					Console.WriteLine ("2 --> Abrir caja");
+					Console.WriteLine ("3 --> Cerrar caja");
+					Console.WriteLine ("4 --> Listado de cajas");
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
+
 					ac = Console.ReadLine();
 					accion = int.Parse (ac);
+
 					break;
+
 				case 4:
 
 					Console.Clear ();
-					Console.WriteLine ("P R O D U C T O S [lista-promociones]");
+					Console.WriteLine ("C A J A S [lista-cajas]");
 					Console.WriteLine ("");
-					foreach (Promocion promo1 in listaPromociones) {
-						Console.WriteLine (promo1.verPromos ());
+					foreach (Caja caj in listaCajas) {
+						Console.WriteLine (caj.verCaja ());
 					}
-					Console.WriteLine ("Presione alguna tecla para volver...");
-					string sasa = Console.ReadLine ();
-					Console.Clear();
-					Console.WriteLine ("P R O D U C T O S [carga]");
+
 					Console.WriteLine ("");
-					Console.WriteLine ("Ingrese otro número para continuar");
-					Console.WriteLine ("1 --> Cargar un producto");
-					Console.WriteLine ("2 --> Cargar un promoción");
-					Console.WriteLine ("3 --> Listar los productos");
-					Console.WriteLine ("4 --> Listar las promociones");
+					Console.WriteLine ("Presione alguna tecla para volver...");
+					string volver = Console.ReadLine ();
+
+
+
+					Console.Clear();
+					Console.WriteLine ("C A J A S");
+					Console.WriteLine ("");
+					Console.WriteLine ("Ingrese un número:");
+					Console.WriteLine ("1 --> Nuevo cajero");
+					Console.WriteLine ("2 --> Abrir caja");
+					Console.WriteLine ("3 --> Cerrar caja");
+					Console.WriteLine ("4 --> Listado de cajas");
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
+
 					ac = Console.ReadLine();
 					accion = int.Parse (ac);
 					break;
-
 
 				default:
 					Console.Clear();
-					Console.WriteLine ("P R O D U C T O S");
+					Console.WriteLine ("C A J A S");
 					Console.WriteLine ("");
-					Console.WriteLine ("Se ingreso un valor fuera de rango");
-					Console.WriteLine ("Ingrese otro número para continuar");
-					Console.WriteLine ("1 --> Cargar un producto");
-					Console.WriteLine ("2 --> Cargar un promoción");
-					Console.WriteLine ("3 --> Listar los productos");
-					Console.WriteLine ("4 --> Listar las promociones");
+					Console.WriteLine ("Ingrese un número:");
+					Console.WriteLine ("1 --> Nuevo cajero");
+					Console.WriteLine ("2 --> Abrir caja");
+					Console.WriteLine ("3 --> Cerrar caja");
+					Console.WriteLine ("4 --> Listado de cajas");
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
+
 					ac = Console.ReadLine();
 					accion = int.Parse (ac);
 					break;
-
 				}	
 			}
 			Console.Clear();
-			Console.WriteLine ("M O D U L O S");
-			Console.WriteLine ("");
-			Console.WriteLine ("menu principal");
+			MainClass main = new MainClass ();
+
 		}
 	}
 }
