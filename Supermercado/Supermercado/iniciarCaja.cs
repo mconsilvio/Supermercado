@@ -6,21 +6,9 @@ namespace Supermercado
 {
 	public class iniciarCaja
 	{
-		public void iniciar()
+		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
 		{
-			ArrayList listaCajas = new ArrayList();
-			Caja caja1 = new Caja (1);
-			Caja caja2 = new Caja (2);
-			Caja caja3 = new Caja (3);
-			Caja caja4 = new Caja (4);
-			Caja caja5 = new Caja (5);
-			listaCajas.Add (caja1);
-			listaCajas.Add (caja2);
-			listaCajas.Add (caja3);
-			listaCajas.Add (caja4);
-			listaCajas.Add (caja5);
-
-			ArrayList listaCajeros = new ArrayList ();
+	
 			Console.WriteLine ("C A J A S");
 			Console.WriteLine ("");
 			Console.WriteLine ("Ingrese un número:");
@@ -82,9 +70,6 @@ namespace Supermercado
 					string CodigoCaja = Console.ReadLine ();
 					Console.WriteLine ("Ingrese el cajero a cargo:");
 					string CajeroAcargo = Console.ReadLine ();
-
-
-
 
 
 
@@ -180,9 +165,12 @@ namespace Supermercado
 					break;
 				}	
 			}
-			Console.Clear();
-			MainClass main = new MainClass ();
+			Console.WriteLine (listaCajas [0]);
+			Console.WriteLine (listaCajeros [0]);
 
+			Console.Clear ();
+			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			super.iniciar ();
 		}
 	}
 }

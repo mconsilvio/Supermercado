@@ -6,10 +6,8 @@ namespace Supermercado
 {
 	public class iniciarProducto
 	{
-		public void iniciar()
+		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
 		{
-			ArrayList listaProductos = new ArrayList();
-			ArrayList listaPromociones = new ArrayList ();
 			Console.WriteLine ("P R O D U C T O S");
 			Console.WriteLine ("");
 			Console.WriteLine ("Ingrese un número");
@@ -138,6 +136,7 @@ namespace Supermercado
 					}
 					Console.WriteLine ("Presione alguna tecla para volver...");
 					string volver = Console.ReadLine ();
+
 					Console.Clear();
 					Console.WriteLine ("P R O D U C T O S [carga]");
 					Console.WriteLine ("");
@@ -168,13 +167,16 @@ namespace Supermercado
 					ac = Console.ReadLine();
 					accion = int.Parse (ac);
 					break;
-
 				}	
 			}
-			Console.Clear();
-			MainClass main = new MainClass ();
+			Console.WriteLine (listaProductos [0]);
+			Console.WriteLine (listaPromociones [0]);
 
+			Console.Clear ();
+			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			super.iniciar ();
 		}
 	}
 }
+
 
