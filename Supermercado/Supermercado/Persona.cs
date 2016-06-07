@@ -8,7 +8,7 @@ namespace Supermercado
 	{
 		private string nombre = null;
 		private string apellido= null;
-		private int dni= 0;
+		private int dni = 0;
 
 		public string getNombre(){
 			return this.nombre;

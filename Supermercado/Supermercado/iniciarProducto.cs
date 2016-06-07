@@ -6,10 +6,14 @@ namespace Supermercado
 {
 	public class iniciarProducto
 	{
-		public void iniciar()
+		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
 		{
-			ArrayList listaProductos = new ArrayList();
-			ArrayList listaPromociones = new ArrayList ();
+			Console.Clear ();
+			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			super.iniciar ();
+		}
+		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
+		{
 			Console.WriteLine ("P R O D U C T O S");
 			Console.WriteLine ("");
 			Console.WriteLine ("Ingrese un número");
@@ -128,6 +132,7 @@ namespace Supermercado
 					ac = Console.ReadLine();
 					accion = int.Parse (ac);
 					break;
+
 				case 4:
 
 					Console.Clear ();
@@ -137,7 +142,8 @@ namespace Supermercado
 						Console.WriteLine (promo1.verPromos ());
 					}
 					Console.WriteLine ("Presione alguna tecla para volver...");
-					string sasa = Console.ReadLine ();
+					Console.ReadLine ();
+
 					Console.Clear();
 					Console.WriteLine ("P R O D U C T O S [carga]");
 					Console.WriteLine ("");
@@ -151,7 +157,6 @@ namespace Supermercado
 					ac = Console.ReadLine();
 					accion = int.Parse (ac);
 					break;
-
 
 				default:
 					Console.Clear();
@@ -168,14 +173,13 @@ namespace Supermercado
 					ac = Console.ReadLine();
 					accion = int.Parse (ac);
 					break;
-
 				}	
 			}
-			Console.Clear();
-			Console.WriteLine ("M O D U L O S");
-			Console.WriteLine ("");
-			Console.WriteLine ("menu principal");
+			Console.Clear ();
+			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+
 		}
 	}
 }
+
 
