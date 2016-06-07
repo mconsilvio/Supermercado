@@ -63,7 +63,7 @@ namespace Supermercado
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
 
-					ac = Console.ReadLine();
+					ac = Console.ReadLine();rew34
 					accion = int.Parse (ac);
 
 					break;
