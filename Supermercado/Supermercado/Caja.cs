@@ -8,7 +8,7 @@ namespace Supermercado
 	{
 		private int CodigoCaja = 0;
 		private bool Estado = false;
-		private string CajeroAcargo = null;
+		private Cajero CajeroAcargo = null;
 
 		public Caja (int CodigoCaja){
 			this.CodigoCaja = CodigoCaja;
@@ -26,18 +26,25 @@ namespace Supermercado
 			this.Estado = nuevoEstado;
 		}
 
-		public string getCajeroAcargo(){
+		public Cajero getCajeroAcargo(){
 			return this.CajeroAcargo;
 		}
 
-		public void setCajeroAcargo(string nuevoCajeroAcargo){
+		public void setCajeroAcargo(Cajero nuevoCajeroAcargo){
 			this.CajeroAcargo = nuevoCajeroAcargo;
 		}
 
 		public string verCaja(){
-			return "Codigo de la caja: " + this.getCodigoCaja ()
-				+ " -> Estado de la caja: " + this.getEstado ()
-				+ " -> Cajero a cargo: " + this.getCajeroAcargo () ;
+			string est;
+			if (this.getEstado ()) {
+				est = "Abierta";
+			} else {
+				est = "Cerrada";
+			}
+
+			return "Caja Nº: " + this.getCodigoCaja ()
+				+ " --> Estado de la caja: " + est
+				+ " --> Cajero a cargo: " + (string)this.getCajeroAcargo ().getNombre();
 		}
 
 	}

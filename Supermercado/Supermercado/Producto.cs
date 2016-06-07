@@ -45,7 +45,7 @@ namespace Supermercado
 
 		public string mostrarProducto(){
 			return "Tipo: " + this.getTipo () + " Marca: " + this.getMarca () 
-			+ " Envase: " + this.getEnvase () + " Precio: " + this.getPrecio().ToString();
+				+ " Envase: " + "<" + this.getEnvase () + ">" + " Precio: " + "$" + this.getPrecio().ToString();
 		}
 
 
