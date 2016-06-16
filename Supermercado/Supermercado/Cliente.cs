@@ -6,7 +6,8 @@ namespace Supermercado
 {
 	public class Cliente : Persona
 	{
-		private string nacimiento= null;
+		private string nacimiento = null;
+		// private Carrito carrito = null;
 
 		public string getNacimiento(){
 			return this.nacimiento;
@@ -21,6 +22,9 @@ namespace Supermercado
 			+ " DNI: " + this.getDni().ToString() + " Fecha de Nacimiento: " + this.getNacimiento();
 		}
 
+		// public void setCarrito (Carrito carrito){
+		//	this.carrito = carrito;
+		// }
 
 	}
 }

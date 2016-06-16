@@ -7,9 +7,9 @@ namespace Supermercado
 	public class Producto
 	{
 		private string tipo = null;
-		private string marca= null;
-		private string envase= null;
-		private double precio= 0;
+		private string marca = null;
+		private string envase = null;
+		private double precio = 0;
 
 		public string getTipo(){
 			return this.tipo;
