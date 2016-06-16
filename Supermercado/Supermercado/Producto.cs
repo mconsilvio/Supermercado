@@ -9,7 +9,7 @@ namespace Supermercado
 		private string tipo = null;
 		private string marca= null;
 		private string envase= null;
-		private float precio= 0;
+		private double precio= 0;
 
 		public string getTipo(){
 			return this.tipo;
@@ -35,11 +35,11 @@ namespace Supermercado
 			this.envase = nuevoEnvase;
 		}
 
-		public float getPrecio(){
+		public double getPrecio(){
 			return this.precio;
 		}
 
-		public void setPrecio(float nuevoPrecio){
+		public void setPrecio(double nuevoPrecio){
 			this.precio = nuevoPrecio;
 		}
 

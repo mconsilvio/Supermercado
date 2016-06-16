@@ -10,6 +10,7 @@ namespace Supermercado
 		{
 			Console.Clear ();
 			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+
 			super.iniciar ();
 		}
 		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
@@ -117,6 +118,7 @@ namespace Supermercado
 					Console.WriteLine ("");
 					foreach (Producto producto2 in listaProductos) {
 						Console.WriteLine (producto2.mostrarProducto ());
+						Console.WriteLine ("");
 					}
 					Console.ReadKey (true);
 					Console.Clear();
@@ -140,6 +142,7 @@ namespace Supermercado
 					Console.WriteLine ("");
 					foreach (Promocion promo1 in listaPromociones) {
 						Console.WriteLine (promo1.verPromos ());
+						Console.WriteLine ("");
 					}
 					Console.WriteLine ("Presione alguna tecla para volver...");
 					Console.ReadLine ();

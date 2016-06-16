@@ -27,17 +27,10 @@ namespace Supermercado
 
 		public void iniciar(){
 			
-			Caja caja1 = new Caja (1);
-			Caja caja2 = new Caja (2);
-			Caja caja3 = new Caja (3);
-			Caja caja4 = new Caja (4);
-			Caja caja5 = new Caja (5);
+			preCarga pre = new preCarga ();
+			pre.preCargaCajas (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			pre.preCargaProductos (listaProductos, listaPromociones, listaCajas, listaCajeros);
 
-			this.listaCajas.Add(caja1);
-			this.listaCajas.Add(caja2);
-			this.listaCajas.Add(caja3);
-			this.listaCajas.Add(caja4);
-			this.listaCajas.Add(caja5);
 
 			Console.WriteLine ("S U P E R M E R C A D O");
 			Console.WriteLine ("");

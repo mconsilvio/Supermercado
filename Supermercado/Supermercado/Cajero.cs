@@ -7,7 +7,7 @@ namespace Supermercado
 	public class Cajero : Persona
 	{
 		private string horario= null;
-		private int CodigoCajero = 0;
+		private int CodigoCajero;
 
 		public string getHorario(){
 			return this.horario;

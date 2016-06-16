@@ -45,7 +45,7 @@ namespace Supermercado
 					string horario = Console.ReadLine ();
 					int cantidadCajeros = listaCajeros.Count;
 					Cajero cajero = new Cajero ();
-					cajero.setCodigoCajero (cantidadCajeros);
+					cajero.setCodigoCajero (cantidadCajeros+1);
 					cajero.setNombre (nombre);
 					cajero.setApellido (apellido);
 					cajero.setDni (dni);
