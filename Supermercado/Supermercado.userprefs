@@ -2,9 +2,21 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Supermercado/iniciarCaja.cs">
     <Files>
-      <File FileName="Supermercado/iniciarCaja.cs" Line="97" Column="44" />
-      <File FileName="Supermercado/Caja.cs" Line="32" Column="1" />
+      <File FileName="Supermercado/iniciarCaja.cs" Line="43" Column="1" />
+      <File FileName="Supermercado/Caja.cs" Line="46" Column="25" />
+      <File FileName="Supermercado/Supermercado.cs" Line="39" Column="31" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Supermercado" expanded="True">
+            <Node name="Supermercado" expanded="True">
+              <Node name="iniciarCaja.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

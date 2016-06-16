@@ -32,6 +32,7 @@ namespace Supermercado
 			Caja caja3 = new Caja (3);
 			Caja caja4 = new Caja (4);
 			Caja caja5 = new Caja (5);
+
 			this.listaCajas.Add(caja1);
 			this.listaCajas.Add(caja2);
 			this.listaCajas.Add(caja3);

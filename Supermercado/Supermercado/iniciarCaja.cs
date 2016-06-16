@@ -63,7 +63,7 @@ namespace Supermercado
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
 
-					ac = Console.ReadLine();rew34
+					ac = Console.ReadLine();
 					accion = int.Parse (ac);
 
 					break;
@@ -82,22 +82,33 @@ namespace Supermercado
 					Console.WriteLine ("Ingrese el Nº del cajero a cargo:");
 					Console.WriteLine ("");
 					Console.WriteLine ("Lista de cajeros cargados:");
-					foreach (Cajero cajero1 in listaCajeros){
-						Console.WriteLine("Nº"+cajero1.getCodigoCajero()+" "+cajero1.getApellido()+", "+cajero1.getNombre()+".");
+					foreach (Cajero cajero1 in listaCajeros) {
+						Console.WriteLine ("Nº" + cajero1.getCodigoCajero () + " " + cajero1.getApellido () + ", " + cajero1.getNombre () + ".");
 					}
 					Console.WriteLine ("");
 					string CajeroAcargo = Console.ReadLine ();
 					int codigoCajero = int.Parse (CajeroAcargo);
+					Caja cajaASetear = null;
 
-					Caja caja = new Caja (CodigoCaja);
-					caja.setEstado (true);
-
-					foreach (Cajero cajeroFiltro in listaCajeros){
-						if(cajeroFiltro.getCodigoCajero() == codigoCajero){
-							caja.setCajeroAcargo (cajeroFiltro);
+					foreach (Caja caja in listaCajas) {
+						if (caja.getCodigoCaja () == CodigoCaja) {
+							cajaASetear = caja;
 						}
 					}
-					listaCajas.Add (caja);
+					if (cajaASetear.getCajeroAcargo () != null) {
+						Console.WriteLine ("Esta caja ya tiene un cajero a cargo");
+						Console.WriteLine ("Presione alguna tecla para volver...");
+						Console.ReadKey ();
+						}else{
+						foreach (Cajero cajeroFiltro in listaCajeros) {
+							if (cajeroFiltro.getCodigoCajero () == codigoCajero) {
+								cajaASetear.setCajeroAcargo (cajeroFiltro);
+								cajaASetear.setEstado (true);
+							}
+						}
+
+					}
+
 
 					Console.Clear();
 					Console.WriteLine ("C A J A S");
@@ -124,6 +135,13 @@ namespace Supermercado
 					CodigoCaja = int.Parse (CodCaja);
 
 
+					foreach (Caja caja in listaCajas) {
+						if (caja.getCodigoCaja () == CodigoCaja) {
+							caja.setEstado (false);
+							caja.setCajeroAcargo (null);
+						}
+					}
+
 					Console.Clear();
 					Console.WriteLine ("C A J A S");
 					Console.WriteLine ("");
@@ -145,9 +163,11 @@ namespace Supermercado
 					Console.Clear ();
 					Console.WriteLine ("C A J A S [lista-cajas]");
 					Console.WriteLine ("");
+
 					foreach (Caja caj in listaCajas) {
-						Console.WriteLine ((string)caj.verCaja ());
+						Console.WriteLine (caj.verCaja());
 					}
+
 					Console.WriteLine ("");
 					Console.WriteLine ("Presione alguna tecla para volver...");
 					Console.ReadLine ();
