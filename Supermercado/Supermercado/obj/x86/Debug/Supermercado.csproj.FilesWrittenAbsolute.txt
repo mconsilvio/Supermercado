@@ -13,3 +13,8 @@
 /home/matias/proyectos/Supermercado/Supermercado/Supermercado/bin/Debug/Supermercado.exe
 /home/matias/proyectos/Supermercado/Supermercado/Supermercado/obj/x86/Debug/Supermercado.exe
 /home/matias/proyectos/Supermercado/Supermercado/Supermercado/obj/x86/Debug/Supermercado.exe.mdb
+/home/mariano/proyectos/Supermercado/Supermercado/Supermercado/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/mariano/proyectos/Supermercado/Supermercado/Supermercado/bin/Debug/Supermercado.exe.mdb
+/home/mariano/proyectos/Supermercado/Supermercado/Supermercado/bin/Debug/Supermercado.exe
+/home/mariano/proyectos/Supermercado/Supermercado/Supermercado/obj/x86/Debug/Supermercado.exe
+/home/mariano/proyectos/Supermercado/Supermercado/Supermercado/obj/x86/Debug/Supermercado.exe.mdb

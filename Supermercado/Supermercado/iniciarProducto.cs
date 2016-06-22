@@ -1,18 +1,11 @@
 ﻿using System;
 using System.Collections;
 
-
+//Menu Productos y Promociones
 namespace Supermercado
 {
 	public class iniciarProducto
 	{
-		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
-		{
-			Console.Clear ();
-			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
-
-			super.iniciar ();
-		}
 		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
 		{
 			Console.WriteLine ("P R O D U C T O S");
@@ -24,9 +17,8 @@ namespace Supermercado
 			Console.WriteLine ("4 --> Listar las promociones");
 			Console.WriteLine ("5 --> Volver al menu principal");
 			Console.WriteLine ("");
-
 			string ac = Console.ReadLine();
-			int accion = int.Parse (ac);
+			long accion = long.Parse (ac);
 
 			while (accion != 5)
 			{
@@ -42,10 +34,10 @@ namespace Supermercado
 					Console.Write ("Ingrese envase de producto: ");
 					string envase = Console.ReadLine ();
 					Console.Write ("Ingrese Precio: ");
-
 					string pr = Console.ReadLine ();
-					float precio = float.Parse (pr);
+					long precio = long.Parse (pr);
 
+					//crea producto, los setea y lo agrega a listaProductos
 					Producto producto = new Producto ();
 					producto.setTipo (tipo);
 					producto.setMarca (marca);
@@ -56,7 +48,6 @@ namespace Supermercado
 					Console.Clear();
 					Console.WriteLine ("P R O D U C T O S [carga-productos]");
 					Console.WriteLine ("");
-					Console.WriteLine ("Carga exitosa.");
 					Console.WriteLine ("Ingrese otro número para continuar:");
 					Console.WriteLine ("1 --> Cargar un producto");
 					Console.WriteLine ("2 --> Cargar un promoción");
@@ -64,19 +55,20 @@ namespace Supermercado
 					Console.WriteLine ("4 --> Listar las promociones");
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
+					Console.WriteLine ("Carga exitosa.");
 					ac = Console.ReadLine();
-					accion = int.Parse (ac);
+					accion = long.Parse (ac);
 					break;
 
 				case 2:
 					Console.Clear ();
 					Console.WriteLine ("P R O D U C T O S [Carga-promociones]");
 					Console.WriteLine ("");
-
 					Console.WriteLine ("Listado de productos: ");
 					int i = 1;
-					foreach (Producto producto2 in listaProductos) {
-						Console.WriteLine (i + "--> " + producto2.mostrarProducto ());
+					//listo los productos
+					foreach (Producto cadaProducto in listaProductos) {
+						Console.WriteLine (i + "--> " + cadaProducto.mostrarProducto ());
 						i++;	
 					}
 
@@ -91,12 +83,42 @@ namespace Supermercado
 					string cantPagar = Console.ReadLine ();
 					int cantidadPagar = int.Parse (cantPagar);
 
-					Promocion promocion = new Promocion ();
 
-					promocion.setProducto ((Producto)listaProductos [idProducto - 1]);
-					promocion.setPromocion (cantidadLlevar, cantidadPagar);
+					//obtiene el producto en la posicion que selecciona el usuario
+					Producto prodSeleccionado = (Producto)listaProductos [idProducto - 1];
+					//obtiene el tipo y marca que el usuario eligio
+					string tipoSeleccionado = prodSeleccionado.getTipo ();
+					string marcaSeleccionado = prodSeleccionado.getMarca ();
+					//bool para verificar si existe la promocion en la lista de promociones
+					bool existe = false;
+					//busca en la lista el tipo y marca para compararlas con las ingresadas por el usuario
+					foreach (Promocion cadaPromo in listaPromociones) {
+						//toma cada producto de cada promo
+						Producto prodActual = cadaPromo.getProducto ();
+						//crea variables del tipo y marca del producto de cada promocion para luego comparar
+						string tipoActual = prodActual.getTipo ();
+						string marcaActual = prodActual.getMarca ();
+						//compara y de ser igual remplaza los parametros
+						if (tipoSeleccionado == tipoActual && marcaSeleccionado == marcaActual) {
+							cadaPromo.setCantidadLLevar (cantidadLlevar);
+							cadaPromo.setCantidadPagar (cantidadPagar);
+							//setea el true para avisar que ya existe
+							existe = true;
+						}
+					}
 
-					listaPromociones.Add (promocion);
+
+					if (existe == false) {
+						//crea promocion, la setea y la agrega a listaPromociones
+						Promocion promocion = new Promocion ();
+						promocion.setProducto ((Producto)listaProductos [idProducto - 1]);
+						/* agarra el idProducto y le resta 1 porque 
+						 * el menu muestra los productos a partir de 1
+						 * y la lista arranca en 0 */
+						promocion.setPromocion (cantidadLlevar, cantidadPagar);
+
+						listaPromociones.Add (promocion);
+					}
 
 					Console.Clear();
 					Console.WriteLine ("P R O D U C T O S [carga]");
@@ -109,7 +131,7 @@ namespace Supermercado
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
 					ac = Console.ReadLine();
-					accion = int.Parse (ac);
+					accion = long.Parse (ac);
 					break;
 
 				case 3:
@@ -120,7 +142,9 @@ namespace Supermercado
 						Console.WriteLine (producto2.mostrarProducto ());
 						Console.WriteLine ("");
 					}
-					Console.ReadKey (true);
+					Console.WriteLine ("Presione alguna tecla para volver...");
+					Console.ReadLine ();
+
 					Console.Clear();
 					Console.WriteLine ("P R O D U C T O S [carga]");
 					Console.WriteLine ("");
@@ -132,7 +156,7 @@ namespace Supermercado
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
 					ac = Console.ReadLine();
-					accion = int.Parse (ac);
+					accion = long.Parse (ac);
 					break;
 
 				case 4:
@@ -158,14 +182,13 @@ namespace Supermercado
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
 					ac = Console.ReadLine();
-					accion = int.Parse (ac);
+					accion = long.Parse (ac);
 					break;
 
 				default:
 					Console.Clear();
 					Console.WriteLine ("P R O D U C T O S");
 					Console.WriteLine ("");
-					Console.WriteLine ("Se ingreso un valor fuera de rango");
 					Console.WriteLine ("Ingrese otro número para continuar");
 					Console.WriteLine ("1 --> Cargar un producto");
 					Console.WriteLine ("2 --> Cargar un promoción");
@@ -173,14 +196,23 @@ namespace Supermercado
 					Console.WriteLine ("4 --> Listar las promociones");
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
+					Console.WriteLine ("El número ingresado no es valido, vuelva a ingresar:");
 					ac = Console.ReadLine();
-					accion = int.Parse (ac);
+					accion = long.Parse (ac);
 					break;
 				}	
 			}
 			Console.Clear ();
+			//pasa parametros a la funcion volverSupermercado
 			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+		}
 
+		//volver al menu principal con las listas cargadas
+		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
+		{
+			Console.Clear ();
+			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			super.iniciar ();
 		}
 	}
 }

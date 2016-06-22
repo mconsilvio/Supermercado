@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections;
 
-
+//funcion de Persona
 namespace Supermercado
 {
 	public class Persona
 	{
+		//atributos
 		private string nombre = null;
 		private string apellido= null;
 		private int dni = 0;
 
+		//metodos
 		public string getNombre(){
 			return this.nombre;
 		}
-
 		public void setNombre(string nuevoNombre){
 			this.nombre = nuevoNombre;
 		}
@@ -21,7 +22,6 @@ namespace Supermercado
 		public string getApellido(){
 			return this.apellido;
 		}
-
 		public void setApellido(string nuevoApellido){
 			this.apellido = nuevoApellido;
 		}
@@ -29,7 +29,6 @@ namespace Supermercado
 		public float getDni(){
 			return this.dni;
 		}
-
 		public void setDni(int nuevoDni){
 			this.dni = nuevoDni;
 		}
@@ -38,8 +37,6 @@ namespace Supermercado
 			return "Nombre: " + this.getNombre () + " Apellido: " + this.getApellido ()
 			+ " DNI: " + this.getDni().ToString();
 		}
-
-
 	}
 }
 
