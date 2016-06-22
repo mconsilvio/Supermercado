@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections;
 
-
+//funcion de Caja
 namespace Supermercado
 {
 	public class Caja
 	{
+		//atributos
 		private int CodigoCaja = 0;
 		private bool Estado = false;
 		private Cajero CajeroAcargo;
 
+		//metodos
 		public Caja (int CodigoCaja){
 			this.CodigoCaja = CodigoCaja;
 		}
@@ -17,7 +19,6 @@ namespace Supermercado
 		public int getCodigoCaja(){
 			return this.CodigoCaja;
 		}
-
 		public bool getEstado(){
 			return this.Estado;
 		}
@@ -29,7 +30,6 @@ namespace Supermercado
 		public Cajero getCajeroAcargo(){
 			return this.CajeroAcargo;
 		}
-
 		public void setCajeroAcargo(Cajero nuevoCajeroAcargo){
 			this.CajeroAcargo = nuevoCajeroAcargo;
 		}
@@ -53,9 +53,7 @@ namespace Supermercado
 				return "Caja Nº: " + this.getCodigoCaja ()
 				+ " --> Estado de la caja: " + est;
 			}
-
 		}
-
 	}
 }
 

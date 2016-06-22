@@ -6,6 +6,7 @@ namespace Supermercado
 {
 	public class iniciarCaja
 	{
+		//creo la funcion con los parametros que recibe de los otros menues
 		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
 		{
 			Console.WriteLine ("C A J A S");
@@ -37,6 +38,8 @@ namespace Supermercado
 					Console.Write ("Ingrese el horario de trabajo: ");
 					string horario = Console.ReadLine ();
 					int cantidadCajeros = listaCajeros.Count;
+
+					//crea un cajero, los setea y lo agrega a listaCajeros
 					Cajero cajero = new Cajero ();
 					cajero.setCodigoCajero (cantidadCajeros+1);
 					cajero.setNombre (nombre);
@@ -55,10 +58,8 @@ namespace Supermercado
 					Console.WriteLine ("4 --> Listado de cajas");
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
-
 					ac = Console.ReadLine();
 					accion = long.Parse (ac);
-
 					break;
 
 				case 2:
@@ -75,12 +76,13 @@ namespace Supermercado
 					Console.WriteLine ("Ingrese el Nº del cajero a cargo:");
 					Console.WriteLine ("");
 					Console.WriteLine ("Lista de cajeros cargados:");
+					//lista los cajeros
 					foreach (Cajero cajero1 in listaCajeros) {
 						Console.WriteLine ("Nº" + cajero1.getCodigoCajero() + " " + cajero1.getApellido () + ", " + cajero1.getNombre () + ".");
 					}
 					Console.WriteLine ("");
 					string CajeroAcargo = Console.ReadLine ();
-					int codigoCajero = int.Parse (CajeroAcargo);
+					int codigoCajero = int.Parse(CajeroAcargo);
 					Caja cajaASetear = null;
 
 					foreach (Caja caja in listaCajas) {

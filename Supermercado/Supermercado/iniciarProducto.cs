@@ -6,6 +6,7 @@ namespace Supermercado
 {
 	public class iniciarProducto
 	{
+		//creo la funcion con los parametros que recibe de los otros menues
 		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
 		{
 			Console.WriteLine ("P R O D U C T O S");
@@ -66,7 +67,7 @@ namespace Supermercado
 					Console.WriteLine ("");
 					Console.WriteLine ("Listado de productos: ");
 					int i = 1;
-					//listo los productos
+					//lista los productos
 					foreach (Producto cadaProducto in listaProductos) {
 						Console.WriteLine (i + "--> " + cadaProducto.mostrarProducto ());
 						i++;	
@@ -82,7 +83,6 @@ namespace Supermercado
 					Console.WriteLine ("Ingrese cantidad a pagar:");
 					string cantPagar = Console.ReadLine ();
 					int cantidadPagar = int.Parse (cantPagar);
-
 
 					//obtiene el producto en la posicion que selecciona el usuario
 					Producto prodSeleccionado = (Producto)listaProductos [idProducto - 1];
@@ -106,8 +106,6 @@ namespace Supermercado
 							existe = true;
 						}
 					}
-
-
 					if (existe == false) {
 						//crea promocion, la setea y la agrega a listaPromociones
 						Promocion promocion = new Promocion ();
@@ -116,7 +114,7 @@ namespace Supermercado
 						 * el menu muestra los productos a partir de 1
 						 * y la lista arranca en 0 */
 						promocion.setPromocion (cantidadLlevar, cantidadPagar);
-
+						//y agrega una nueva en caso de que no exista la anterior
 						listaPromociones.Add (promocion);
 					}
 
