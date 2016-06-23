@@ -66,8 +66,8 @@ namespace Supermercado
 					Console.WriteLine ("P R O D U C T O S [Carga-promociones]");
 					Console.WriteLine ("");
 					Console.WriteLine ("Listado de productos: ");
+					//lista los productos numerados
 					int i = 1;
-					//lista los productos
 					foreach (Producto cadaProducto in listaProductos) {
 						Console.WriteLine (i + "--> " + cadaProducto.mostrarProducto ());
 						i++;	

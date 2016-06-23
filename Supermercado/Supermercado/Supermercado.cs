@@ -62,6 +62,9 @@ namespace Supermercado
 
 				case 3:
 					Console.Clear ();
+					//inicia modulo cliente
+					iniciarCliente moduloCliente = new iniciarCliente ();
+					moduloCliente.iniciar (this.listaProductos,this.listaPromociones,this.listaCajas,this.listaCajeros);
 					break;
 
 				case 4:

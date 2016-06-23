@@ -46,6 +46,7 @@
     <Compile Include="Supermercado.cs" />
     <Compile Include="preCarga.cs" />
     <Compile Include="Carrito.cs" />
+    <Compile Include="iniciarCliente.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
