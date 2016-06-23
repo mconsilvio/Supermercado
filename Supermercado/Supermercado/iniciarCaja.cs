@@ -7,7 +7,7 @@ namespace Supermercado
 	public class iniciarCaja
 	{
 		//creo la funcion con los parametros que recibe de los otros menues
-		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
+		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros, ArrayList listaClientes)
 		{
 			Console.WriteLine ("C A J A S");
 			Console.WriteLine ("");
@@ -33,8 +33,7 @@ namespace Supermercado
 					Console.Write ("Ingrese el apellido: ");
 					string apellido = Console.ReadLine ();
 					Console.Write ("Ingrese el dni: ");
-					string d = Console.ReadLine ();
-					int dni = int.Parse (d);
+					string dni = Console.ReadLine ();
 					Console.Write ("Ingrese el horario de trabajo: ");
 					string horario = Console.ReadLine ();
 					int cantidadCajeros = listaCajeros.Count;
@@ -196,14 +195,14 @@ namespace Supermercado
 			}
 			Console.Clear ();
 			//pasa parametros a la funcion volverSupermercado
-			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);
 		}
 
 		//volver al menu principal con las listas cargadas
-		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
+		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros, ArrayList listaClientes)
 		{
 			Console.Clear ();
-			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);
 			super.iniciar ();
 		}
 	}

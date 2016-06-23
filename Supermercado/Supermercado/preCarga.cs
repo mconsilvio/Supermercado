@@ -7,7 +7,7 @@ namespace Supermercado
 	public class preCarga
 	{
 		//precarga de las cajas
-		public void preCargaCajas (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros){
+		public void preCargaCajas (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros, ArrayList listaClientes){
 
 			//crea las cajas
 			Caja caja1 = new Caja (1);
@@ -31,13 +31,13 @@ namespace Supermercado
 			cajero1.setCodigoCajero (1);
 			cajero1.setNombre("Mariano");
 			cajero1.setApellido ("Rojas");
-			cajero1.setDni (35224926);
+			cajero1.setDni ("35224926");
 			cajero1.setHorario ("de 12 a 20");
 
 			cajero2.setCodigoCajero (2);
 			cajero2.setNombre("Matias");
 			cajero2.setApellido ("Perez");
-			cajero2.setDni (37138426);
+			cajero2.setDni ("37138426");
 			cajero2.setHorario ("de 8 a 14");
 
 			//agrega los cajeros a la listaCajeros
@@ -52,7 +52,7 @@ namespace Supermercado
 		}
 
 		//precarga de productos
-		public void preCargaProductos(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros){
+		public void preCargaProductos(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros, ArrayList listaClientes){
 		
 			//crea productos
 			Producto producto1 = new Producto ();
@@ -128,6 +128,29 @@ namespace Supermercado
 			listaPromociones.Add (promocion3);
 			listaPromociones.Add (promocion4);
 			listaPromociones.Add (promocion5);
+		}
+
+		//precarga de los clientes
+		public void preCargaClientes (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros, ArrayList listaClientes){
+
+			//crea los clientes
+			Cliente cliente1 = new Cliente ();
+			Cliente cliente2 = new Cliente ();
+
+			//carga los datos de los clientes
+			cliente1.setNombre("Roberto");
+			cliente1.setApellido ("Carlos");
+			cliente1.setDni ("33444555");
+			cliente1.setNacimiento ("01-01-85");
+
+			cliente2.setNombre("Juan");
+			cliente2.setApellido ("Perez");
+			cliente2.setDni ("44555666");
+			cliente2.setNacimiento ("12-12-00");
+
+			//agrega las cajas a la listaCajas
+			listaClientes.Add(cliente1);
+			listaClientes.Add(cliente2);
 		}
 	}
 }

@@ -7,7 +7,7 @@ namespace Supermercado
 	public class iniciarProducto
 	{
 		//creo la funcion con los parametros que recibe de los otros menues
-		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
+		public void iniciar(ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros, ArrayList listaClientes)
 		{
 			Console.WriteLine ("P R O D U C T O S");
 			Console.WriteLine ("");
@@ -202,14 +202,14 @@ namespace Supermercado
 			}
 			Console.Clear ();
 			//pasa parametros a la funcion volverSupermercado
-			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);
 		}
 
 		//volver al menu principal con las listas cargadas
-		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
+		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros,ArrayList listaClientes)
 		{
 			Console.Clear ();
-			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);
 			super.iniciar ();
 		}
 	}

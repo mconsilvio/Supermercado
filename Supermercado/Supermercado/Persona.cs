@@ -9,7 +9,7 @@ namespace Supermercado
 		//atributos
 		private string nombre = null;
 		private string apellido= null;
-		private int dni = 0;
+		private string dni = null;
 
 		//metodos
 		public string getNombre(){
@@ -26,16 +26,16 @@ namespace Supermercado
 			this.apellido = nuevoApellido;
 		}
 			
-		public float getDni(){
+		public string getDni(){
 			return this.dni;
 		}
-		public void setDni(int nuevoDni){
+		public void setDni(string nuevoDni){
 			this.dni = nuevoDni;
 		}
 
 		public string mostrarPersona(){
 			return "Nombre: " + this.getNombre () + " Apellido: " + this.getApellido ()
-			+ " DNI: " + this.getDni().ToString();
+			+ " DNI: " + this.getDni();
 		}
 	}
 }

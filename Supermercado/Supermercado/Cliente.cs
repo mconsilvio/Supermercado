@@ -18,9 +18,8 @@ namespace Supermercado
 			this.nacimiento = nuevoNacimiento;
 		}
 
-		public string mostrarCajero(){
-			return "Nombre: " + this.getNombre () + " Apellido: " + this.getApellido ()
-			+ " DNI: " + this.getDni().ToString() + " Fecha de Nacimiento: " + this.getNacimiento();
+		public string mostrarCliente(){
+			return "Cliente: " + this.getNombre () + " " + this.getApellido ();
 		}
 		// public void setCarrito (Carrito carrito){
 		//	this.carrito = carrito;

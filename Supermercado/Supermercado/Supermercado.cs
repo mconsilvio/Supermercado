@@ -11,28 +11,26 @@ namespace Supermercado
 		ArrayList listaPromociones = new ArrayList ();
 		ArrayList listaCajas = new ArrayList();
 		ArrayList listaCajeros = new ArrayList ();
+		ArrayList listaClientes = new ArrayList();
+
 
 		//Creo el constructor Supermercado con los parametros que necesita, y recibe
-		public Supermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
+		public Supermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros,ArrayList listaClientes)
 		{
 			//reemplazo los atributos de las listas con los parametros recibidos
 			this.listaProductos = listaProductos;
 			this.listaPromociones = listaPromociones;
 			this.listaCajas = listaCajas;
 			this.listaCajeros = listaCajeros;
+			this.listaClientes = listaClientes;
 		}
 
 		public void iniciar(){
-			//instancio la funcion que trae las listas precargada
-			preCarga pre = new preCarga ();
-			//funcion que trae las cajas
-			pre.preCargaCajas (listaProductos, listaPromociones, listaCajas, listaCajeros);
-			//funcion que trae las productos
-			pre.preCargaProductos (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			
 
 			Console.WriteLine ("S U P E R M E R C A D O");
 			Console.WriteLine ("");
-			Console.WriteLine ("Ingrese un número para acceder al módulo deceado:");
+			Console.WriteLine ("Ingrese un número para acceder al módulo deseado:");
 			Console.WriteLine ("1 --> Productos");
 			Console.WriteLine ("2 --> Cajas");
 			Console.WriteLine ("3 --> Cliente");
@@ -50,21 +48,21 @@ namespace Supermercado
 					Console.Clear (); 
 					//inicia modulo producto
 					iniciarProducto moduloProducto = new iniciarProducto ();
-					moduloProducto.iniciar (this.listaProductos,this.listaPromociones,this.listaCajas,this.listaCajeros);
+					moduloProducto.iniciar (this.listaProductos,this.listaPromociones,this.listaCajas,this.listaCajeros,this.listaClientes);
 					break;
 
 				case 2:
 					Console.Clear ();
 					//inicia modulo cajas
 					iniciarCaja moduloCajas = new iniciarCaja ();
-					moduloCajas.iniciar (this.listaProductos,this.listaPromociones,this.listaCajas,this.listaCajeros);
+					moduloCajas.iniciar (this.listaProductos,this.listaPromociones,this.listaCajas,this.listaCajeros,this.listaClientes);
 					break;
 
 				case 3:
 					Console.Clear ();
 					//inicia modulo cliente
 					iniciarCliente moduloCliente = new iniciarCliente ();
-					moduloCliente.iniciar (this.listaProductos,this.listaPromociones,this.listaCajas,this.listaCajeros);
+					moduloCliente.iniciar (this.listaProductos,this.listaPromociones,this.listaCajas,this.listaCajeros,this.listaClientes);
 					break;
 
 				case 4:
@@ -104,10 +102,10 @@ namespace Supermercado
 		}
 
 		//volver al menu principal con las listas cargadas
-		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros)
+		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros,ArrayList listaClientes)
 		{
 			Console.Clear ();
-			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros);
+			Supermercado super = new Supermercado (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);
 			super.iniciar ();
 		}
 	}

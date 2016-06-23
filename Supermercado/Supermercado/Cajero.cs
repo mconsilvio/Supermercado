@@ -27,7 +27,7 @@ namespace Supermercado
 
 		public string mostrarCajero(){
 			return "Nombre: " + this.getNombre () + " Apellido: " + this.getApellido ()
-			+ " DNI: " + this.getDni().ToString( ) + " Código del cajero: " + this.getCodigoCajero ()
+			+ " DNI: " + this.getDni() + " Código del cajero: " + this.getCodigoCajero ()
 			+ " Horario: " + this.getHorario () ;
 		}
 	}
