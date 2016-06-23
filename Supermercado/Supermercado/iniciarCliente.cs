@@ -141,6 +141,9 @@ namespace Supermercado
 
 				Console.ReadKey ();
 			}
+			Console.WriteLine (carrito.calcularTotal(listaPromociones).ToString()+" me hago alto guiso");
+			Console.ReadKey ();
+
 
 
 			//       FALTA      agregar la impresion de total a pagar

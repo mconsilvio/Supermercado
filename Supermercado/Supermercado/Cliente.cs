@@ -8,7 +8,6 @@ namespace Supermercado
 	{
 		//atributos
 		private string nacimiento = null;
-		// private Carrito carrito = null;
 
 		//metodos
 		public string getNacimiento(){
@@ -21,9 +20,6 @@ namespace Supermercado
 		public string mostrarCliente(){
 			return "Cliente: " + this.getNombre () + " " + this.getApellido ();
 		}
-		// public void setCarrito (Carrito carrito){
-		//	this.carrito = carrito;
-		// }
 	}
 }
 

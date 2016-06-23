@@ -31,19 +31,40 @@ namespace Supermercado
 				string cantidad = listaProd [1].ToString ();
 
 				Console.WriteLine (tipo + " " + marca + " <" + envase + "> " + " <" + cantidad + " unidades>");
-				
 			}
-			
 		}
 
+		public double calcularTotal (ArrayList listaPromociones){
 
-		/*public double calcularTotal (){
-			if (productosEnCarrito == null) {
-				return 0;
-			} else {
-				foreach (Producto producto in productosEnCarrito) {
-				totalAPagar = (cantidadPagar / cantidadLLevar) + (cantidadPagar % cantidadLLevar);
+			double totalAPagar = 0.0;
+
+			foreach (ArrayList prodEnCarrito in this.productosEnCarrito) {
+				Promocion promocion=null;
+
+				Producto prodSeleccionado = (Producto)prodEnCarrito [0];
+				int cantProducto = (int)prodEnCarrito [1];
+
+				foreach (Promocion promo in listaPromociones) {
+					Producto producto = (Producto)promo.getProducto ();
+					if (producto.getTipo () == prodSeleccionado.getTipo () && producto.getMarca () == prodSeleccionado.getMarca () && producto.getEnvase () == prodSeleccionado.getEnvase ()) {
+						promocion = promo; 
+					}
+				}
+
+				int cantLlevar = promocion.getCantidadLLevar ();
+				int cantPagar = promocion.getCantidadPagar ();
+				double precioProducto = prodSeleccionado.getPrecio ();
+				if (cantProducto < cantLlevar) {
+					totalAPagar += (precioProducto * cantProducto);
+				} else {
+					totalAPagar += ((precioProducto * cantPagar) * (cantProducto / cantLlevar)) + ((cantProducto % cantLlevar) * precioProducto);
+				} //agregar que muestre sin promocion
 			}
-		}*/
+
+			return totalAPagar;
+		
+
+
+		}
 	}
 }
