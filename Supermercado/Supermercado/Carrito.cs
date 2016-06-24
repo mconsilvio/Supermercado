@@ -34,37 +34,57 @@ namespace Supermercado
 			}
 		}
 
-		public double calcularTotal (ArrayList listaPromociones){
+
+		//Calculadora para calcular el total a pagar con promocion y el monto que se ahorra con la promo
+		//creo la funcion con la lista de promociones como parametro
+		public ArrayList calcularPromo (ArrayList listaPromociones){
 
 			double totalAPagar = 0.0;
+			double sinDesc = 0.0;
+			double ahorro = 0.0;
 
+			//recorro una lista con sus cantidades en la lista de productosEnCarrito
 			foreach (ArrayList prodEnCarrito in this.productosEnCarrito) {
 				Promocion promocion=null;
-
+				//me va a devolver otra lista con producto y cantidad
 				Producto prodSeleccionado = (Producto)prodEnCarrito [0];
 				int cantProducto = (int)prodEnCarrito [1];
-
+				//recorre promo en la lista de promociones y carga la promo en producto
+				//luego compara los get de producto con los get del producto seleccionado
+				//si todos los parametros son iguales carga promo en promocion
 				foreach (Promocion promo in listaPromociones) {
 					Producto producto = (Producto)promo.getProducto ();
-					if (producto.getTipo () == prodSeleccionado.getTipo () && producto.getMarca () == prodSeleccionado.getMarca () && producto.getEnvase () == prodSeleccionado.getEnvase ()) {
-						promocion = promo; 
+					if (producto.getTipo () == prodSeleccionado.getTipo ()
+					    && producto.getMarca () == prodSeleccionado.getMarca ()
+					    && producto.getEnvase () == prodSeleccionado.getEnvase ()) {
+						 	promocion = promo; 
 					}
 				}
-
+				//declara las variables con los valores que le corresponden
 				int cantLlevar = promocion.getCantidadLLevar ();
 				int cantPagar = promocion.getCantidadPagar ();
 				double precioProducto = prodSeleccionado.getPrecio ();
+
+				//pregunta si el producto entra en la promocion
 				if (cantProducto < cantLlevar) {
+					//si no entra hace el precio por el producto
 					totalAPagar += (precioProducto * cantProducto);
 				} else {
-					totalAPagar += ((precioProducto * cantPagar) * (cantProducto / cantLlevar)) + ((cantProducto % cantLlevar) * precioProducto);
-				} //agregar que muestre sin promocion
+					//si entra hace los calculos para que me de el precio con la promocion incluida
+					totalAPagar += ((precioProducto * cantPagar) * (cantProducto / cantLlevar))
+					+ ((cantProducto % cantLlevar) * precioProducto);
+				}
+				//agarra el precio de producto y lo multiplica por la cantidad
+				sinDesc += (precioProducto * cantProducto) ;
 			}
-
-			return totalAPagar;
-		
-
-
+			//hace el total a pagar menos el descuento para saber cuanto se ahorro
+			ahorro = sinDesc - totalAPagar;
+			//la lista que contiene el total a pagar con el descuento y el ahorro
+			ArrayList pagoYAhorro = new ArrayList();
+			pagoYAhorro.Add(totalAPagar);
+			pagoYAhorro.Add (ahorro);
+			return pagoYAhorro;
 		}
 	}
 }
+

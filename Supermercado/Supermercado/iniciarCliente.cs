@@ -141,14 +141,17 @@ namespace Supermercado
 
 				Console.ReadKey ();
 			}
-			Console.WriteLine (carrito.calcularTotal(listaPromociones).ToString()+" me hago alto guiso");
+
+			//trae los valores que me devuelve la funcion calcularPromo
+			ArrayList pagoYAhorro = carrito.calcularPromo (listaPromociones);
+			double pagar = (double)pagoYAhorro [0];
+			double ahorro = (double)pagoYAhorro [1];
+
+			Console.WriteLine ("Total a pagar:" + pagar.ToString());
+			Console.WriteLine ("Con su compra ahorró:" + ahorro.ToString());
+			Console.WriteLine ("");
+			Console.WriteLine ("Precione una tecla para volver");
 			Console.ReadKey ();
-
-
-
-			//       FALTA      agregar la impresion de total a pagar
-
-
 
 			//pasa parametros a la funcion volverSupermercado
 			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);
