@@ -42,8 +42,6 @@ namespace Supermercado
 						sumaTotal += cadaCaja.getRecaudacion();
 					}
 					Console.WriteLine ( "Total reacudado por el supermercado: " + sumaTotal);
-
-
 					Console.WriteLine ("");
 					Console.WriteLine ("Presione una tecla para volver");
 					Console.ReadKey ();
@@ -80,7 +78,6 @@ namespace Supermercado
 					foreach (Caja cadaCaja in listaCajas) {
 						Console.WriteLine ( "Caja Nº" + cadaCaja.getCodigoCaja () + ": $" + cadaCaja.getRecaudacion());
 					}
-
 					Console.WriteLine ("");
 					Console.WriteLine ("Presione una tecla para volver");
 					Console.ReadKey ();
@@ -117,7 +114,6 @@ namespace Supermercado
 					foreach (Cajero cadaCajero in listaCajeros) {
 						Console.WriteLine (cadaCajero.getNombre () + cadaCajero.getApellido () + ": $" + cadaCajero.getRecaudacion());
 					}
-
 					Console.WriteLine ("");
 					Console.WriteLine ("Presione una tecla para volver");
 					Console.ReadKey ();
@@ -148,14 +144,12 @@ namespace Supermercado
 					Console.WriteLine ("4 --> Total recaudado por cliente");
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
-
 					Console.WriteLine ("Total reacudado por cada cliente:");
 					Console.WriteLine ("");
 					//muestra el total reacudado por cada cliente
 					foreach (Cliente cadaCliente in listaClientes) {
 						Console.WriteLine (cadaCliente.getNombre () + cadaCliente.getApellido () + ": $" + cadaCliente.getRecaudacion());
 					}
-
 					Console.WriteLine ("");
 					Console.WriteLine ("Presione una tecla para volver");
 					Console.ReadKey ();
@@ -191,12 +185,10 @@ namespace Supermercado
 					break;
 				}	
 			}
-
 			Console.Clear ();
 			//pasa parametros a la funcion volverSupermercado
 			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);
 		}
-
 		//volver al menu principal con las listas cargadas
 		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros, ArrayList listaClientes)
 		{
@@ -206,4 +198,3 @@ namespace Supermercado
 		}
 	}
 }
-

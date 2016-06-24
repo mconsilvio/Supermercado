@@ -15,7 +15,6 @@ namespace Supermercado
 			ArrayList listaCajeros = new ArrayList ();
 			ArrayList listaClientes = new ArrayList ();
 
-
 			//instancio la funcion que trae las listas precargada
 			preCarga pre = new preCarga ();
 			//funcion que trae las cajas

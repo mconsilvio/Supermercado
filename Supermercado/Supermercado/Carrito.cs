@@ -9,7 +9,6 @@ namespace Supermercado
 		//atributos
 		public ArrayList productosEnCarrito = new ArrayList();
 
-
 		//metodos
 		public void agregarProducto(Producto prodSeleccionado, int cantAgregar){
 			//guarda el producto y su cantidad en la lista unProductoEnCarrito
@@ -33,7 +32,6 @@ namespace Supermercado
 				Console.WriteLine (tipo + " " + marca + " <" + envase + "> " + " <" + cantidad + " unidades>");
 			}
 		}
-
 
 		//Calculadora para calcular el total a pagar con promocion y el monto que se ahorra con la promo
 		//creo la funcion con la lista de promociones como parametro
@@ -87,4 +85,3 @@ namespace Supermercado
 		}
 	}
 }
-

@@ -73,7 +73,6 @@ namespace Supermercado
 				agregarProducto = int.Parse (aPr);
 			}
 
-
 			Console.Clear ();
 			Console.WriteLine ("P R O D U C T O S [Compra-productos]");
 			Console.WriteLine ("");
@@ -138,7 +137,6 @@ namespace Supermercado
 				client.setDni (dni);
 				client.setNacimiento (nacimiento);
 				listaClientes.Add (client);
-
 				Console.ReadKey ();
 			}
 
@@ -166,8 +164,6 @@ namespace Supermercado
 					cliente.agregarRecaudacion(pagar);
 				}
 			}
-
-
 
 			//pasa parametros a la funcion volverSupermercado
 			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);

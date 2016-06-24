@@ -13,7 +13,6 @@ namespace Supermercado
 		ArrayList listaCajeros = new ArrayList ();
 		ArrayList listaClientes = new ArrayList();
 
-
 		//Creo el constructor Supermercado con los parametros que necesita, y recibe
 		public Supermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros,ArrayList listaClientes)
 		{
@@ -26,8 +25,6 @@ namespace Supermercado
 		}
 
 		public void iniciar(){
-			
-
 			Console.WriteLine ("S U P E R M E R C A D O");
 			Console.WriteLine ("");
 			Console.WriteLine ("Ingrese un número para acceder al módulo deseado:");
@@ -37,7 +34,6 @@ namespace Supermercado
 			Console.WriteLine ("4 --> Administración");
 			Console.WriteLine ("5 --> Salir del sistema");
 			Console.WriteLine ("");
-
 			string ac = Console.ReadLine();
 			long accion = long.Parse (ac);
 
@@ -92,7 +88,6 @@ namespace Supermercado
 					Console.WriteLine ("5 --> Salir del sistema");
 					Console.WriteLine ("");
 					Console.WriteLine ("El número ingresado no es valido, vuelva a ingresar:");
-
 					ac = Console.ReadLine();
 					accion = long.Parse (ac);
 					break;
@@ -113,5 +108,3 @@ namespace Supermercado
 		}
 	}
 }
-
-

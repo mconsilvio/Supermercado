@@ -158,7 +158,6 @@ namespace Supermercado
 					break;
 
 				case 4:
-
 					Console.Clear ();
 					Console.WriteLine ("P R O D U C T O S [lista-promociones]");
 					Console.WriteLine ("");
@@ -204,7 +203,6 @@ namespace Supermercado
 			//pasa parametros a la funcion volverSupermercado
 			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);
 		}
-
 		//volver al menu principal con las listas cargadas
 		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros,ArrayList listaClientes)
 		{
@@ -214,5 +212,3 @@ namespace Supermercado
 		}
 	}
 }
-
-

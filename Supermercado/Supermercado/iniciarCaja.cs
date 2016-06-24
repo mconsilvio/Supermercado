@@ -82,7 +82,6 @@ namespace Supermercado
 					}
 
 					Console.WriteLine ("");
-
 					string CajeroAcargo = Console.ReadLine ();
 					int codigoCajero = int.Parse (CajeroAcargo);
 					Caja cajaASetear = null;
@@ -93,13 +92,12 @@ namespace Supermercado
 						}
 					}
 
-					//se crea una variable booleana para verificar si el cajero
+					//crea una variable booleana para verificar si el cajero
 					//recibido por parametro ya está atendiendo.
-
 					bool tieneCajero = false;
 					int codCaja = 0;
 
-					//se realiza la funcion para verificar si el cajero está en alguna caja
+					//realiza la funcion para verificar si el cajero está en alguna caja
 					foreach (Caja caja in listaCajas) {
 						
 						Cajero cajeroCaja = caja.getCajeroAcargo ();
@@ -111,9 +109,8 @@ namespace Supermercado
 						}
 					}
 
-					//si el cajero está en alguna caja muestra un mensaje de que no se puede asignar
-					//a una caja.
-
+					//si el cajero está en alguna caja muestra un mensaje
+					//de que no se puede asignar a una caja.
 					if (tieneCajero == true) {
 						Console.WriteLine ("El cajero ya está atendiendo la caja N° " + codCaja);
 						Console.WriteLine ("Pulse cualquier tecla para volver...");
@@ -122,7 +119,6 @@ namespace Supermercado
 						
 						//se verifica si algun cajero ya está atendiendo la caja a abrir
 						if (cajaASetear.getCajeroAcargo () != null) {
-
 							Cajero cajeroSeteado = (Cajero)cajaASetear.getCajeroAcargo ();
 							Console.WriteLine ("La caja "+cajaASetear.getCodigoCaja().ToString() + " ya esta siendo atendida por " +  cajeroSeteado.getNombre() + " " + cajeroSeteado.getApellido() );
 							Console.WriteLine ("Presione alguna tecla para volver...");
@@ -136,9 +132,6 @@ namespace Supermercado
 							}
 						}
 					}
-						
-
-
 					Console.Clear();
 					Console.WriteLine ("C A J A S");
 					Console.WriteLine ("");
@@ -180,7 +173,6 @@ namespace Supermercado
 					Console.WriteLine ("");
 					ac = Console.ReadLine();
 					accion = long.Parse (ac);
-
 					break;
 
 				case 4:
@@ -230,7 +222,6 @@ namespace Supermercado
 			//pasa parametros a la funcion volverSupermercado
 			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);
 		}
-
 		//volver al menu principal con las listas cargadas
 		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros, ArrayList listaClientes)
 		{
@@ -240,4 +231,3 @@ namespace Supermercado
 		}
 	}
 }
-

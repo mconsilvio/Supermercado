@@ -49,7 +49,3 @@ namespace Supermercado
 		}
 	}
 }
-
-
-
-
