@@ -36,14 +36,18 @@ namespace Supermercado
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
 
-
-
 					//muestra el total reacudado por el supermercado
+					double sumaTotal = 0.0;
+					foreach (Caja cadaCaja in listaCajas) {
+						sumaTotal += cadaCaja.getRecaudacion();
+					}
+					Console.WriteLine ( "Total reacudado por el supermercado: " + sumaTotal);
 
 
-
-					Console.WriteLine ("Precione una tecla para volver");
+					Console.WriteLine ("");
+					Console.WriteLine ("Presione una tecla para volver");
 					Console.ReadKey ();
+
 					Console.Clear();
 					Console.WriteLine ("A D M I N I S T R A C I O N");
 					Console.WriteLine ("");
@@ -70,14 +74,17 @@ namespace Supermercado
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
 
-
-
+					Console.WriteLine ("Total reacudado por cada caja:");
+					Console.WriteLine ("");
 					//muestra el total reacudado por cada caja
+					foreach (Caja cadaCaja in listaCajas) {
+						Console.WriteLine ( "Caja Nº" + cadaCaja.getCodigoCaja () + ": $" + cadaCaja.getRecaudacion());
+					}
 
-
-
-					Console.WriteLine ("Precione una tecla para volver");
+					Console.WriteLine ("");
+					Console.WriteLine ("Presione una tecla para volver");
 					Console.ReadKey ();
+
 					Console.Clear();
 					Console.WriteLine ("A D M I N I S T R A C I O N");
 					Console.WriteLine ("");
@@ -104,13 +111,15 @@ namespace Supermercado
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
 
-
-
+					Console.WriteLine ("Total reacudado por cada cajero:");
+					Console.WriteLine ("");
 					//muestra el total reacudado por cada cajero
+					foreach (Cajero cadaCajero in listaCajeros) {
+						Console.WriteLine (cadaCajero.getNombre () + cadaCajero.getApellido () + ": $" + cadaCajero.getRecaudacion());
+					}
 
-
-
-					Console.WriteLine ("Precione una tecla para volver");
+					Console.WriteLine ("");
+					Console.WriteLine ("Presione una tecla para volver");
 					Console.ReadKey ();
 
 					Console.Clear();
@@ -140,13 +149,15 @@ namespace Supermercado
 					Console.WriteLine ("5 --> Volver al menu principal");
 					Console.WriteLine ("");
 
-
-
+					Console.WriteLine ("Total reacudado por cada cliente:");
+					Console.WriteLine ("");
 					//muestra el total reacudado por cada cliente
+					foreach (Cliente cadaCliente in listaClientes) {
+						Console.WriteLine (cadaCliente.getNombre () + cadaCliente.getApellido () + ": $" + cadaCliente.getRecaudacion());
+					}
 
-
-
-					Console.WriteLine ("Precione una tecla para volver");
+					Console.WriteLine ("");
+					Console.WriteLine ("Presione una tecla para volver");
 					Console.ReadKey ();
 
 					Console.Clear();

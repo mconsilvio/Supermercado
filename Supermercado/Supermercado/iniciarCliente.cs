@@ -153,6 +153,22 @@ namespace Supermercado
 			Console.WriteLine ("Precione una tecla para volver");
 			Console.ReadKey ();
 
+			//suma el total a la recaudacion que tenia
+			cajaSeleccionada.agregarRecaudacion (pagar);
+
+			//crea la variable cajero le asigna el cajero y luego le suma el monto
+			Cajero cajero = cajaSeleccionada.getCajeroAcargo ();
+			cajero.agregarRecaudacion(pagar);
+
+			//busca el cliente, cuando lo encuentra a ese le setea la recaudacion
+			foreach (Cliente cliente in listaClientes){
+				if (cliente.getDni() == dni) {
+					cliente.agregarRecaudacion(pagar);
+				}
+			}
+
+
+
 			//pasa parametros a la funcion volverSupermercado
 			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);
 		}

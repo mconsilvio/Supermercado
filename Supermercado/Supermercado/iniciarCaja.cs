@@ -75,13 +75,16 @@ namespace Supermercado
 					Console.WriteLine ("Ingrese el Nº del cajero a cargo:");
 					Console.WriteLine ("");
 					Console.WriteLine ("Lista de cajeros cargados:");
+
 					//lista los cajeros
 					foreach (Cajero cajero1 in listaCajeros) {
-						Console.WriteLine ("Nº" + cajero1.getCodigoCajero() + " " + cajero1.getApellido () + ", " + cajero1.getNombre () + ".");
+						Console.WriteLine ("Nº" + cajero1.getCodigoCajero () + " " + cajero1.getApellido () + ", " + cajero1.getNombre () + ".");
 					}
+
 					Console.WriteLine ("");
+
 					string CajeroAcargo = Console.ReadLine ();
-					int codigoCajero = int.Parse(CajeroAcargo);
+					int codigoCajero = int.Parse (CajeroAcargo);
 					Caja cajaASetear = null;
 
 					foreach (Caja caja in listaCajas) {
@@ -90,20 +93,50 @@ namespace Supermercado
 						}
 					}
 
-					if (cajaASetear.getCajeroAcargo () != null) {
+					//se crea una variable booleana para verificar si el cajero
+					//recibido por parametro ya está atendiendo.
+
+					bool tieneCajero = false;
+					int codCaja = 0;
+
+					//se realiza la funcion para verificar si el cajero está en alguna caja
+					foreach (Caja caja in listaCajas) {
 						
-						Cajero cajeroSeteado = (Cajero)cajaASetear.getCajeroAcargo ();
-						Console.WriteLine ("La caja "+cajaASetear.getCodigoCaja().ToString() + " ya esta siendo atendida por " +  cajeroSeteado.getNombre() + " " + cajeroSeteado.getApellido() );
-						Console.WriteLine ("Presione alguna tecla para volver...");
-						Console.ReadKey ();
-						}else{
-						foreach (Cajero cajeroFiltro in listaCajeros) {
-							if (cajeroFiltro.getCodigoCajero () == codigoCajero) {
-								cajaASetear.setCajeroAcargo (cajeroFiltro);
-								cajaASetear.setEstado (true);
+						Cajero cajeroCaja = caja.getCajeroAcargo ();
+						if (cajeroCaja != null) {
+							if (cajeroCaja.getCodigoCajero () == codigoCajero) {
+								tieneCajero = true;
+								codCaja = caja.getCodigoCaja ();
 							}
 						}
 					}
+
+					//si el cajero está en alguna caja muestra un mensaje de que no se puede asignar
+					//a una caja.
+
+					if (tieneCajero == true) {
+						Console.WriteLine ("El cajero ya está atendiendo la caja N° " + codCaja);
+						Console.WriteLine ("Pulse cualquier tecla para volver...");
+						Console.ReadKey ();
+					} else {
+						
+						//se verifica si algun cajero ya está atendiendo la caja a abrir
+						if (cajaASetear.getCajeroAcargo () != null) {
+
+							Cajero cajeroSeteado = (Cajero)cajaASetear.getCajeroAcargo ();
+							Console.WriteLine ("La caja "+cajaASetear.getCodigoCaja().ToString() + " ya esta siendo atendida por " +  cajeroSeteado.getNombre() + " " + cajeroSeteado.getApellido() );
+							Console.WriteLine ("Presione alguna tecla para volver...");
+							Console.ReadKey ();
+						}else{
+							foreach (Cajero cajeroFiltro in listaCajeros) {
+								if (cajeroFiltro.getCodigoCajero () == codigoCajero) {
+									cajaASetear.setCajeroAcargo (cajeroFiltro);
+									cajaASetear.setEstado (true);
+								}
+							}
+						}
+					}
+						
 
 
 					Console.Clear();

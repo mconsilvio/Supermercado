@@ -11,6 +11,8 @@ namespace Supermercado
 		private string apellido= null;
 		private string dni = null;
 
+		private double Recaudacion = 0.0;
+
 		//metodos
 		public string getNombre(){
 			return this.nombre;
@@ -36,6 +38,14 @@ namespace Supermercado
 		public string mostrarPersona(){
 			return "Nombre: " + this.getNombre () + " Apellido: " + this.getApellido ()
 			+ " DNI: " + this.getDni();
+		}
+
+		public double getRecaudacion(){
+			return this.Recaudacion;
+		}
+
+		public void agregarRecaudacion(double monto){
+			this.Recaudacion += monto;
 		}
 	}
 }
