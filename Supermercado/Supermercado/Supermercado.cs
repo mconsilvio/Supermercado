@@ -35,10 +35,11 @@ namespace Supermercado
 			Console.WriteLine ("5 --> Salir del sistema");
 			Console.WriteLine ("");
 			string ac = Console.ReadLine();
-			long accion = long.Parse (ac);
-
+			//try{
+				long accion = long.Parse (ac);
 			while (accion != 6)
 			{
+				
 				switch (accion){
 				case 1:
 					Console.Clear (); 
@@ -91,13 +92,27 @@ namespace Supermercado
 					ac = Console.ReadLine();
 					accion = long.Parse (ac);
 					break;
-				}	
-			}
+				}
+				}
+					
+			//}
+		/*catch{
+				Console.Clear ();
+				Console.WriteLine ("*******************************************************");
+				Console.WriteLine ("Ha ingresado carácteres no válidos vuelva a intentarlo");
+				Console.WriteLine ("*******************************************************");
+				Console.WriteLine ("");
+
+				this.iniciar ();
+
+			}*/
+
 			Console.Clear();
 			Console.WriteLine ("Fin del Programa");
 			Console.WriteLine ("");
 			Console.WriteLine ("Good bye!"); 
 		}
+
 
 		//volver al menu principal con las listas cargadas
 		public void volverSupermercado (ArrayList listaProductos,ArrayList listaPromociones,ArrayList listaCajas,ArrayList listaCajeros,ArrayList listaClientes)

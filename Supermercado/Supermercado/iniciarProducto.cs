@@ -19,6 +19,9 @@ namespace Supermercado
 			Console.WriteLine ("5 --> Volver al menu principal");
 			Console.WriteLine ("");
 			string ac = Console.ReadLine();
+
+			try{
+				
 			long accion = long.Parse (ac);
 
 			while (accion != 5)
@@ -198,7 +201,18 @@ namespace Supermercado
 					accion = long.Parse (ac);
 					break;
 				}	
-			}
+				}
+			}catch{
+					Console.Clear ();
+					Console.WriteLine ("*******************************************************");
+					Console.WriteLine ("Ha ingresado carácteres no válidos vuelva a intentarlo");
+					Console.WriteLine ("*******************************************************");
+					Console.WriteLine ("");
+
+				this.iniciar (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);
+
+				}
+
 			Console.Clear ();
 			//pasa parametros a la funcion volverSupermercado
 			this.volverSupermercado (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);

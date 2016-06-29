@@ -32,7 +32,16 @@ namespace Supermercado
 			Console.WriteLine ("");
 			Console.WriteLine ("Agregue un producto al carro o 0 para finalizar");
 			string aPr= Console.ReadLine ();
-			int agregarProducto = int.Parse (aPr);
+			int agregarProducto;
+
+			// manejo excepcion de producto no valido. si pone letras o 
+			// cualquier cosa deja el carrito vacio
+
+			try{
+				agregarProducto = int.Parse (aPr);
+			}catch{
+				agregarProducto = 0;
+			}
 
 			while (agregarProducto != 0){
 				//obtiene el producto seleccionado en la posicion que selecciona el usuario
@@ -137,11 +146,11 @@ namespace Supermercado
 				client.setDni (dni);
 				client.setNacimiento (nacimiento);
 				listaClientes.Add (client);
-				Console.ReadKey ();
 			}
 
 			//trae los valores que me devuelve la funcion calcularPromo
-			ArrayList pagoYAhorro = carrito.calcularPromo (listaPromociones);
+			ArrayList pagoYAhorro = carrito.calcularPromoRecursiva (listaPromociones);
+			Console.ReadKey ();
 			double pagar = (double)pagoYAhorro [0];
 			double ahorro = (double)pagoYAhorro [1];
 
