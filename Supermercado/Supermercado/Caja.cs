@@ -10,7 +10,6 @@ namespace Supermercado
 		private int CodigoCaja = 0;
 		private bool Estado = false;
 		private Cajero CajeroAcargo;
-
 		private double Recaudacion = 0.0;
 
 		//metodos
@@ -60,7 +59,6 @@ namespace Supermercado
 		public double getRecaudacion(){
 			return this.Recaudacion;
 		}
-
 		public void agregarRecaudacion(double monto){
 			this.Recaudacion += monto;
 		}

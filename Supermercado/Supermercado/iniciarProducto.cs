@@ -202,7 +202,8 @@ namespace Supermercado
 					break;
 				}	
 				}
-			}catch{
+			}
+			catch{
 					Console.Clear ();
 					Console.WriteLine ("*******************************************************");
 					Console.WriteLine ("Ha ingresado carácteres no válidos vuelva a intentarlo");

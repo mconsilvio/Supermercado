@@ -194,7 +194,6 @@ namespace Supermercado
 				Console.WriteLine ("");
 
 				this.iniciar (listaProductos, listaPromociones, listaCajas, listaCajeros, listaClientes);
-
 			}
 			Console.Clear ();
 			//pasa parametros a la funcion volverSupermercado

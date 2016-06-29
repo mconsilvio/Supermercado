@@ -35,7 +35,7 @@ namespace Supermercado
 			Console.WriteLine ("5 --> Salir del sistema");
 			Console.WriteLine ("");
 			string ac = Console.ReadLine();
-			//try{
+			try{
 				long accion = long.Parse (ac);
 			while (accion != 6)
 			{
@@ -93,10 +93,10 @@ namespace Supermercado
 					accion = long.Parse (ac);
 					break;
 				}
-				}
+			}
 					
-			//}
-		/*catch{
+			}
+		 	catch{
 				Console.Clear ();
 				Console.WriteLine ("*******************************************************");
 				Console.WriteLine ("Ha ingresado carácteres no válidos vuelva a intentarlo");
@@ -105,7 +105,7 @@ namespace Supermercado
 
 				this.iniciar ();
 
-			}*/
+			}  	
 
 			Console.Clear();
 			Console.WriteLine ("Fin del Programa");

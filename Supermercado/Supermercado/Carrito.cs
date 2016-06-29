@@ -47,13 +47,10 @@ namespace Supermercado
 				pagoYAhorro.Add (this.totalAPagar);
 				pagoYAhorro.Add(this.ahorro);
 				return pagoYAhorro;
-
 			} else {
-
 				//Si el carrito no está vacío, tomo el primer producto y su cantidad
 				//y realizo los calculos pertinentes para retornar el ahorro y la 
 				//cantidad a pagar.
-
 				Promocion promocion=null;
 				//me va a devolver otra lista con producto y cantidad
 				ArrayList elProducto = (ArrayList)this.productosEnCarrito[0];
@@ -98,7 +95,6 @@ namespace Supermercado
 				//elimino el producto que ya calculé para llegar al caso base
 				this.productosEnCarrito.RemoveAt(0);
 				return calcularPromoRecursiva(listaPromociones);
-
 			}
 		}
 	}
