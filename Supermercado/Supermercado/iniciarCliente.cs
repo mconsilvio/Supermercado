@@ -37,11 +37,11 @@ namespace Supermercado
 			// manejo excepcion de producto no valido. si pone letras o 
 			// cualquier cosa deja el carrito vacio
 
-			try{
+			//try{
 				agregarProducto = int.Parse (aPr);
-			}catch{
-				agregarProducto = 0;
-			}
+			//}catch{
+				//agregarProducto = 0;
+			//}
 
 			while (agregarProducto != 0){
 				//obtiene el producto seleccionado en la posicion que selecciona el usuario
@@ -123,7 +123,6 @@ namespace Supermercado
 			foreach (Cliente cliente in listaClientes){
 				if (cliente.getDni() == dni) {
 					Console.WriteLine(cliente.mostrarCliente());
-					Console.ReadKey ();
 					existe = true;
 				}
 			}
@@ -150,10 +149,10 @@ namespace Supermercado
 
 			//trae los valores que me devuelve la funcion calcularPromo
 			ArrayList pagoYAhorro = carrito.calcularPromoRecursiva (listaPromociones);
-			Console.ReadKey ();
 			double pagar = (double)pagoYAhorro [0];
 			double ahorro = (double)pagoYAhorro [1];
 
+			Console.WriteLine ("");
 			Console.WriteLine ("Total a pagar:" + pagar.ToString());
 			Console.WriteLine ("Con su compra ahorró:" + ahorro.ToString());
 			Console.WriteLine ("");
